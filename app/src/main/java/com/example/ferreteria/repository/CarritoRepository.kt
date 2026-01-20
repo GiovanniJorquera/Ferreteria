@@ -1,7 +1,7 @@
 package com.example.ferreteria.repository
 
-import com.example.ferreteria.viewmodel.CarritoManager
+import com.example.ferreteria.viewmodel.CarritoViewModel
 
 object CarritoRepository {
-    val carrito = CarritoManager()
+    val carrito = CarritoViewModel()
 }
