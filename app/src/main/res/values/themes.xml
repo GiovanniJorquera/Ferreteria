@@ -2,4 +2,7 @@
 <resources>
 
     <style name="Theme.Ferreteria" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Ferreteria.Login" parent="Theme.AppCompat.Light.NoActionBar" />
+
 </resources>

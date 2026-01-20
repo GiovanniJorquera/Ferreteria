@@ -10,7 +10,7 @@ object ProductoRepository {
         Producto(3, "Caja de tornillos", 3000, 20)
     )
 
-    fun obtenerProductos(): List<Producto> = productos
+    fun obtenerProductos(): List<Producto> = productos.toList()
 
     fun obtenerProductoPorId(id: Int): Producto? {
         return productos.find { it.id == id }

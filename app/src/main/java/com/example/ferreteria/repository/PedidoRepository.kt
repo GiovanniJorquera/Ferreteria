@@ -1,32 +1,30 @@
 package com.example.ferreteria.repository
 
-import com.example.ferreteria.Carrito.ItemCarrito
 import com.example.ferreteria.Pedidos.Pedido
+import com.example.ferreteria.Carrito.ItemCarrito
 
-/**
- * Repositorio en memoria para registrar compras (historial por usuario).
- */
 object PedidoRepository {
 
     private val pedidos = mutableListOf<Pedido>()
-    private var nextId = 1
+    private var autoId = 1
 
-    fun registrarCompra(usuarioId: Int, items: List<ItemCarrito>): Pedido {
-        val total = items.sumOf { it.precio * it.cantidad }
-        val pedido = Pedido(
-            id = nextId++,
-            usuarioId = usuarioId,
-            fechaMillis = System.currentTimeMillis(),
-            items = items.map { it.copy() },
-            total = total
+    fun crearPedido(
+        usuarioId: Int,
+        items: List<ItemCarrito>,
+        total: Int
+    ) {
+        pedidos.add(
+            Pedido(
+                id = autoId++,
+                usuarioId = usuarioId,
+                fechaMillis = System.currentTimeMillis(),
+                items = items,
+                total = total
+            )
         )
-        pedidos.add(pedido)
-        return pedido
     }
 
     fun obtenerPedidosPorUsuario(usuarioId: Int): List<Pedido> {
-        return pedidos
-            .filter { it.usuarioId == usuarioId }
-            .sortedByDescending { it.fechaMillis }
+        return pedidos.filter { it.usuarioId == usuarioId }
     }
 }

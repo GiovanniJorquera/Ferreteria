@@ -11,23 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ferreteria">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Ferreteria">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.ferreteria.Usuario.AdminActivity" />
-        <activity android:name="com.example.ferreteria.Usuario.ClienteActivity" />
-        <activity android:name="com.example.ferreteria.Carrito.CarritoActivity" />
-        <activity android:name="com.example.ferreteria.Productos.ProductoTestActivity" />
-        <activity android:name="com.example.ferreteria.Usuario.LoginActivity" />
+        <activity
+        android:name=".Usuario.LoginActivity"
+        android:exported="false"
+        android:theme="@style/Theme.Ferreteria.Login" />
+
+        <activity
+            android:name=".Carrito.CarritoActivity"
+            android:theme="@style/Theme.Ferreteria.Login"
+            android:exported="false" />
+
+        <activity
+            android:name=".Usuario.HistorialActivity"
+            android:theme="@style/Theme.Ferreteria.Login" />
+
 
     </application>
 </manifest>

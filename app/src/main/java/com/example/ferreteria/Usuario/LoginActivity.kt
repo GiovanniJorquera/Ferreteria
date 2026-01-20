@@ -6,9 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ferreteria.MainActivity
 import com.example.ferreteria.R
 import com.example.ferreteria.repository.UsuarioRepository
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,13 +25,7 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordInput.text.toString()
 
             if (UsuarioRepository.login(email, password)) {
-                val usuario = UsuarioRepository.usuarioActual!!
-
-                if (usuario.rol == Rol.ADMIN) {
-                    startActivity(Intent(this, AdminActivity::class.java))
-                } else {
-                    startActivity(Intent(this, ClienteActivity::class.java))
-                }
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
