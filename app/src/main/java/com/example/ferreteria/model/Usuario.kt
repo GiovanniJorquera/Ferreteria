@@ -1,4 +1,4 @@
-package com.example.ferreteria.Usuario
+package com.example.ferreteria.model
 
 data class Usuario(
     val id: Int,

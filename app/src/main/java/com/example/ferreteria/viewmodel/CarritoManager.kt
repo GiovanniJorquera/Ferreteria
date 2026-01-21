@@ -1,6 +1,6 @@
 package com.example.ferreteria.viewmodel
 
-import com.example.ferreteria.Carrito.ItemCarrito
+import com.example.ferreteria.model.ItemCarrito
 
 class CarritoViewModel {
 

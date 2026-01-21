@@ -1,4 +1,4 @@
-package com.example.ferreteria.Productos
+package com.example.ferreteria.model
 
 data class Producto(
     val id: Int,

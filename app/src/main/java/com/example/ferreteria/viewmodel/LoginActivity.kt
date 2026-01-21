@@ -1,4 +1,4 @@
-package com.example.ferreteria.Usuario
+package com.example.ferreteria.viewmodel
 
 import android.content.Intent
 import android.os.Bundle

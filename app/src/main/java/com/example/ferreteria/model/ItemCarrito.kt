@@ -1,4 +1,4 @@
-package com.example.ferreteria.Carrito
+package com.example.ferreteria.model
 
 data class ItemCarrito(
     val productoId: Int,

@@ -23,17 +23,17 @@
         </activity>
 
         <activity
-        android:name=".Usuario.LoginActivity"
+        android:name=".viewmodel.LoginActivity"
         android:exported="false"
         android:theme="@style/Theme.Ferreteria.Login" />
 
         <activity
-            android:name=".Carrito.CarritoActivity"
+            android:name=".viewmodel.CarritoActivity"
             android:theme="@style/Theme.Ferreteria.Login"
             android:exported="false" />
 
         <activity
-            android:name=".Usuario.HistorialActivity"
+            android:name=".viewmodel.HistorialActivity"
             android:theme="@style/Theme.Ferreteria.Login" />
 
 
