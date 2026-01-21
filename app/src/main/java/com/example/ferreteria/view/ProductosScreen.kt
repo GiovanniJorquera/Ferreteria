@@ -1,4 +1,4 @@
-package com.example.ferreteria.Productos
+package com.example.ferreteria.view
 
 import android.content.Intent
 import android.widget.Toast
@@ -10,13 +10,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.example.ferreteria.Carrito.CarritoActivity
-import com.example.ferreteria.Usuario.LoginActivity
-import com.example.ferreteria.Usuario.Rol
+import com.example.ferreteria.viewmodel.CarritoActivity
+import com.example.ferreteria.viewmodel.LoginActivity
+import com.example.ferreteria.model.Rol
 import com.example.ferreteria.repository.CarritoRepository
 import com.example.ferreteria.repository.UsuarioRepository
 import com.example.ferreteria.viewmodel.ProductoViewModel
-import com.example.ferreteria.Usuario.HistorialActivity
+import com.example.ferreteria.viewmodel.HistorialActivity
+import com.example.ferreteria.model.Producto
 
 
 @Composable

@@ -1,7 +1,7 @@
 package com.example.ferreteria.repository
 
-import com.example.ferreteria.Usuario.Rol
-import com.example.ferreteria.Usuario.Usuario
+import com.example.ferreteria.model.Rol
+import com.example.ferreteria.model.Usuario
 
 object UsuarioRepository {
 

@@ -1,4 +1,4 @@
-package com.example.ferreteria.Productos
+package com.example.ferreteria.viewmodel
 
 import android.os.Bundle
 import android.util.Log

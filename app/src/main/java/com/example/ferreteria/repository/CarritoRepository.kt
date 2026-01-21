@@ -1,7 +1,7 @@
 package com.example.ferreteria.repository
 
-import com.example.ferreteria.Carrito.ItemCarrito
-import com.example.ferreteria.Productos.Producto
+import com.example.ferreteria.model.ItemCarrito
+import com.example.ferreteria.model.Producto
 
 object CarritoRepository {
 

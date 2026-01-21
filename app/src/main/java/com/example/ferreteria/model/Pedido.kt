@@ -1,6 +1,6 @@
-package com.example.ferreteria.Pedidos
+package com.example.ferreteria.model
 
-import com.example.ferreteria.Carrito.ItemCarrito
+import com.example.ferreteria.model.ItemCarrito
 
 data class Pedido(
     val id: Int,

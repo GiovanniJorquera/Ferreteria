@@ -1,6 +1,6 @@
 package com.example.ferreteria.repository
 
-import com.example.ferreteria.Productos.Producto
+import com.example.ferreteria.model.Producto
 
 object ProductoRepository {
 

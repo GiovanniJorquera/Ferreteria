@@ -1,7 +1,7 @@
 package com.example.ferreteria.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.ferreteria.Productos.Producto
+import com.example.ferreteria.model.Producto
 import com.example.ferreteria.repository.ProductoRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

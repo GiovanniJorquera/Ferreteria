@@ -1,4 +1,4 @@
-package com.example.ferreteria.Carrito
+package com.example.ferreteria.viewmodel
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
