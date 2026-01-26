@@ -24,12 +24,17 @@ class LoginActivity : AppCompatActivity() {
             val email = emailInput.text.toString()
             val password = passwordInput.text.toString()
 
-            if (UsuarioRepository.login(email, password)) {
-                startActivity(Intent(this, MainActivity::class.java))
+            if (UsuarioRepository.login(email, password, this)) {
+                Toast.makeText(this, "Sesión iniciada", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
                 finish()
             } else {
                 Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
             }
+
         }
     }
 }

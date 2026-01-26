@@ -13,19 +13,23 @@ class ProductoViewModel : ViewModel() {
 
     val productos: StateFlow<List<Producto>> = _productos
 
-    fun agregarProducto(nombre: String, precio: String, stock: String) {
+    fun agregarProducto(
+        nombre: String,
+        precio: String,
+        stock: String,
+        imagenUri: String?
+    ) {
         if (nombre.isBlank() || precio.isBlank() || stock.isBlank()) return
 
         val precioInt = precio.toIntOrNull() ?: return
         val stockInt = stock.toIntOrNull() ?: return
 
-        if (precioInt <= 0 || stockInt < 0) return
-
         val nuevoProducto = Producto(
-            id = (ProductoRepository.productos.maxOfOrNull { it.id } ?: 0) + 1,
+            id = (_productos.value.maxOfOrNull { it.id } ?: 0) + 1,
             nombre = nombre,
             precio = precioInt,
-            stock = stockInt
+            stock = stockInt,
+            imagenUri = imagenUri
         )
 
         ProductoRepository.agregarProducto(nuevoProducto)
@@ -41,14 +45,21 @@ class ProductoViewModel : ViewModel() {
         id: Int,
         nombre: String,
         precio: String,
-        stock: String
+        stock: String,
+        imagenUri: String?
     ) {
         val precioInt = precio.toIntOrNull() ?: return
         val stockInt = stock.toIntOrNull() ?: return
 
         ProductoRepository.eliminarProducto(id)
         ProductoRepository.agregarProducto(
-            Producto(id, nombre, precioInt, stockInt)
+            Producto(
+                id = id,
+                nombre = nombre,
+                precio = precioInt,
+                stock = stockInt,
+                imagenUri = imagenUri
+            )
         )
 
         _productos.value = ProductoRepository.obtenerProductos()

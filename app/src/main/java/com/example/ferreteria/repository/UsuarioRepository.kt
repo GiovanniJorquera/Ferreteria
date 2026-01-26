@@ -1,5 +1,6 @@
 package com.example.ferreteria.repository
 
+import android.content.Context
 import com.example.ferreteria.model.Rol
 import com.example.ferreteria.model.Usuario
 
@@ -13,15 +14,38 @@ object UsuarioRepository {
     var usuarioActual: Usuario? = null
         private set
 
-    fun login(email: String, password: String): Boolean {
+    fun login(email: String, password: String, context: Context): Boolean {
         val usuario = usuarios.find {
             it.email == email && it.password == password
         }
-        usuarioActual = usuario
-        return usuario != null
+
+        if (usuario != null) {
+            usuarioActual = usuario
+            guardarSesion(context, usuario)
+            return true
+        }
+        return false
     }
 
-    fun logout() {
+    fun logout(context: Context) {
         usuarioActual = null
+        val prefs = context.getSharedPreferences("sesion", Context.MODE_PRIVATE)
+        prefs.edit().clear().apply()
+    }
+
+    fun cargarSesion(context: Context) {
+        val prefs = context.getSharedPreferences("sesion", Context.MODE_PRIVATE)
+        val id = prefs.getInt("id", -1)
+
+        if (id != -1) {
+            usuarioActual = usuarios.find { it.id == id }
+        }
+    }
+
+    private fun guardarSesion(context: Context, usuario: Usuario) {
+        val prefs = context.getSharedPreferences("sesion", Context.MODE_PRIVATE)
+        prefs.edit()
+            .putInt("id", usuario.id)
+            .apply()
     }
 }

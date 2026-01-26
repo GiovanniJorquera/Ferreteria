@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import com.example.ferreteria.repository.UsuarioRepository
 import com.example.ferreteria.view.ProductosScreen
 import com.example.ferreteria.ui.theme.FerreteriaTheme
 import com.example.ferreteria.viewmodel.ProductoViewModel
@@ -14,6 +15,9 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        UsuarioRepository.cargarSesion(this)
+
         enableEdgeToEdge()
 
         setContent {
